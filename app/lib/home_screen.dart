@@ -8,6 +8,7 @@ class HomeScreen extends StatelessWidget {
     "Dental",
     "Heart",
     "Eye",
+    "Brain",
     "Ear",
   ];
 
@@ -72,7 +73,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     child: Center(
                       child: Icon(
-                        Icons.map,
+                        Icons.notifications_outlined,
                         size: 30,
                         color: Colors.lightBlue,
                         ),
