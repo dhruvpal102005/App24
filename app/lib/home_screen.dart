@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_material_design_icons/flutter_material_design_icons.dart';
 
 
+
 class HomeScreen extends StatelessWidget {
   List catNames = [
     "Dental",
@@ -31,7 +32,39 @@ class HomeScreen extends StatelessWidget {
     return SingleChildScrollView(
       padding: EdgeInsets.only(top: 30),
       child: Column(
-        
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(padding: EdgeInsets.symmetric(horizontal: 15),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  CircleAvatar(
+                    radius: 30,
+                    backgroundImage: AssetImage("images/hospital-1.jpg"),
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Text(
+                    "When Someone Means a Alot to You ",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  Spacer(),
+                  Container(
+                    padding: EdgeInsets.all(10),
+                    
+                  ),
+                ],
+              ),
+            ],
+          ),
+          ),
+        ],
       ),
     );
   }
