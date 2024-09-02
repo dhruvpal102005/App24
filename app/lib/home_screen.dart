@@ -12,11 +12,11 @@ class HomeScreen extends StatelessWidget {
   ];
 
   List<Icon> catIcons = [
-    Icon(MdiIcons.toothOutline, color: Colors.redAccent, size: 30,),
-    Icon(MdiIcons.heartPlus, color: Colors.redAccent, size: 30,),
-    Icon(MdiIcons.eye, color: Colors.redAccent, size: 30,),
-    Icon(MdiIcons.brain, color: Colors.redAccent, size: 30,),
-    Icon(MdiIcons.earHearing, color: Colors.redAccent, size: 30,),
+    Icon(MdiIcons.toothOutline, color: Colors.lightBlue, size: 30,),
+    Icon(MdiIcons.heartPlus, color: Colors.lightBlue, size: 30,),
+    Icon(MdiIcons.eye, color: Colors.lightBlue, size: 30,),
+    Icon(MdiIcons.brain, color: Colors.lightBlue, size: 30,),
+    Icon(MdiIcons.earHearing, color: Colors.lightBlue, size: 30,),
   ];
 
   List imgs = [
@@ -72,9 +72,9 @@ class HomeScreen extends StatelessWidget {
                     ),
                     child: Center(
                       child: Icon(
-                        Icons.notifications_outlined,
+                        Icons.map,
                         size: 30,
-                        color: Colors.redAccent,
+                        color: Colors.lightBlue,
                         ),
                     ),
                     
@@ -138,13 +138,147 @@ class HomeScreen extends StatelessWidget {
                             ),
                             height: 60,
                             width: 60,
-                            
-
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              shape: BoxShape.circle,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black12,
+                                  blurRadius: 4,
+                                  spreadRadius: 2,
+                                ),
+                              ],
+                            ),
+                            child: Center(
+                              child: catIcons[index],
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            catNames[index],
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.black.withOpacity(0.7),
+                            ),
+                          
                           ),
                         ],
                       ),
                     );
                   },
+                ),
+              ),
+              SizedBox(height: 20,),
+              Padding(padding: EdgeInsets.only(left: 15,),
+              child: Text(
+                "Best Hospitals in Pune",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.black.withOpacity(0.7),
+                ),
+              ),
+              ),
+              Container(
+                height: 340,
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  itemCount: imgs.length,
+                  itemBuilder: (context,index){
+                    return Column(
+                      children: [
+                        Container(
+                          height: 300,
+                          width: 200,
+                          margin: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(15),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black12,
+                                blurRadius: 4,
+                                spreadRadius: 2,
+                              ),
+                            ],
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Stack(
+                                children: [
+                                  InkWell(
+                                    onTap: (){
+                                      // Navigator.push(
+                                      //   context, MaterialPageRoute(
+                                      //     builder: (context) => DoctorScreen()));
+                                    },
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(15),
+                                        topRight: Radius.circular(15),
+                                      ),
+                                      child: Image.asset(
+                                        imgs[index],
+                                        height: 200,
+                                        width: 200,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 8,),
+                              Padding(padding: EdgeInsets.symmetric(horizontal: 5),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Hospital Name",
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w400,
+                                      color: Colors.black.withOpacity(0.6),
+
+                                    ),
+                                  ),
+                                  Text(
+                                    "Best Hospital",
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      color: Colors.black.withOpacity(0.6),
+
+                                    ),
+                                    ),
+                                    SizedBox(height: 8,),
+                                    Row(
+                                      children: [
+                                        Icon(
+                                          Icons.star,
+                                          color: Colors.amber,
+                                        ),
+                                        SizedBox(width: 5,),
+                                        Text("4.8",
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          color: Colors.black.withOpacity(0.6),
+                                        ),
+                                        )
+                                      ],
+                                    ),
+                                ],
+                              ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    );
+                  }
                 ),
               ),
             ],
