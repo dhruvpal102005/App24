@@ -1,3 +1,4 @@
+import 'package:app/appointment_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -351,16 +352,16 @@ class HospitalScreen extends StatelessWidget {
                 Text(
                   "Beds Available : ",
                   style: TextStyle(
-                    color: Colors.black12,
+                    color: Colors.black,
                     fontWeight: FontWeight.bold,
-                    fontSize: 25,
+                    fontSize: 20,
                   ),
                 ),
                 Text(
                   "400",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 25,
+                    fontSize: 20,
                     color: Colors.lightBlue,
                   ),
                 ),
@@ -369,10 +370,10 @@ class HospitalScreen extends StatelessWidget {
             SizedBox(height: 15,),
             InkWell(
               onTap: (){
-                // Navigator.push(context, MaterialPageRoute(
-                //   builder: (context) => AppointmentScreen(),
-                // ),
-                // );
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) => AppointmentScreen(),
+                ),
+                );
               },
               child: Container(
                 width: MediaQuery.of(context).size.width,
@@ -383,7 +384,7 @@ class HospitalScreen extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    "Get a Appointment",
+                    "Get an Appointment",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,
