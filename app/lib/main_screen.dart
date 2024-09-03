@@ -46,8 +46,8 @@ class _MainScreenState extends State<MainScreen> {
             label: "Home",
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.chat_bubble_text_fill),
-            label: "Messages",
+            icon: Icon(CupertinoIcons.location_solid),
+            label: "Location",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.calendar_month_outlined),
