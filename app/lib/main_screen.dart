@@ -55,8 +55,8 @@ class _MainScreenState extends State<MainScreen> {
             label: "Schedule",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: "Profile",
+            icon: Icon(Icons.chat_bubble_outline),
+            label: "Chatbot",
           ),
         ], 
       ),
