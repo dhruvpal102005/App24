@@ -18,6 +18,12 @@ dependencies:
   cupertino_icons: ^1.0.8
   google_maps_flutter: ^2.9.0
   flutter_material_design_icons: ^1.1.7447
+  material_design_icons_flutter: ^7.0.7296
+  webview_flutter: ^4.0.0
+  kommunicate_flutter: ^1.9.5
+flutter_html: ^2.2.1
+kommunicate_flutter: ^2.0.0
+preview: ^0.0.8
 
 dev_dependencies:
   flutter_test:

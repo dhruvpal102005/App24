@@ -1,7 +1,7 @@
-import 'package:app/main_screen.dart';
 import 'package:flutter/material.dart';
+import 'login_page.dart';  // Importing the login page
 
-void main(){
+void main() {
   runApp(MyApp());
 }
 
@@ -12,8 +12,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Queing management and OPD app",
-      home: MainScreen(),
+      title: "Queuing management and OPD app",
+      home: LoginPage(),  // Set the LoginPage as the starting screen
     );
   }
 }
