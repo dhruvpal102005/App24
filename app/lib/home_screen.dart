@@ -2,8 +2,6 @@ import 'package:app/hospital_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_material_design_icons/flutter_material_design_icons.dart';
 
-
-
 class HomeScreen extends StatelessWidget {
   List catNames = [
     "Dental",
@@ -27,6 +25,13 @@ class HomeScreen extends StatelessWidget {
     "images/hospital-3.jpg",
     "images/hospital-4.jpg",
     "images/hospital-5.jpg",
+  ];
+
+  List<String> notifications = [
+    "Appointment confirmed at 10 AM",
+    "Health check-up reminder",
+    "New hospital added nearby",
+    "Special discount on heart surgeries",
   ];
 
   @override
@@ -59,33 +64,75 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   Spacer(),
-                  Container(
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: Color(0xFFF2F8FF),
-                      shape: BoxShape.circle,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black12,
-                          blurRadius: 4,
-                          spreadRadius: 2,
+                  InkWell(
+                    onTap: () {
+                      showModalBottomSheet(
+                        context: context,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.vertical(top: Radius.circular(25.0)),
                         ),
-                      ],
-                    ),
-                    child: Center(
-                      child: Icon(
-                        Icons.notifications_outlined,
-                        size: 30,
-                        color: Colors.lightBlue,
+                        builder: (BuildContext context) {
+                          return Container(
+                            padding: EdgeInsets.all(20),
+                            height: 300,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Notifications",
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                Divider(),
+                                Expanded(
+                                  child: ListView.builder(
+                                    itemCount: notifications.length,
+                                    itemBuilder: (context, index) {
+                                      return ListTile(
+                                        leading: Icon(Icons.notifications, color: Colors.lightBlue),
+                                        title: Text(
+                                          notifications[index],
+                                          style: TextStyle(fontSize: 16),
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+                        }
+                      );
+                    },
+                    child: Container(
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Color(0xFFF2F8FF),
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black12,
+                            blurRadius: 4,
+                            spreadRadius: 2,
+                          ),
+                        ],
+                      ),
+                      child: Center(
+                        child: Icon(
+                          Icons.notifications_outlined,
+                          size: 30,
+                          color: Colors.lightBlue,
                         ),
+                      ),
                     ),
-                    
                   ),
                 ],
               ),
               ),
               Container(
-                margin: EdgeInsets.only(top: 20,bottom: 20,left: 15,right: 15),
+                margin: EdgeInsets.only(top: 20, bottom: 20, left: 15, right: 15),
                 width: MediaQuery.of(context).size.width,
                 height: 55,
                 alignment: Alignment.center,
@@ -107,7 +154,7 @@ class HomeScreen extends StatelessWidget {
                   hintStyle: TextStyle(
                     color: Colors.black.withOpacity(0.5),
                   ),
-                  prefixIcon: Icon(Icons.search,size: 25,),
+                  prefixIcon: Icon(Icons.search, size: 25,),
                 ),
                ), 
               ),
@@ -129,14 +176,14 @@ class HomeScreen extends StatelessWidget {
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemCount: catNames.length,
-                  itemBuilder: (context,index){
+                  itemBuilder: (context, index) {
                     return InkWell(
                       onTap: (){},
                       child: Column(
                         children: [
                           Container(
                             margin: EdgeInsets.symmetric(
-                              vertical: 5,horizontal: 15
+                              vertical: 5, horizontal: 15
                             ),
                             height: 60,
                             width: 60,
@@ -165,7 +212,6 @@ class HomeScreen extends StatelessWidget {
                               fontWeight: FontWeight.w500,
                               color: Colors.black.withOpacity(0.7),
                             ),
-                          
                           ),
                         ],
                       ),
@@ -174,7 +220,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20,),
-              Padding(padding: EdgeInsets.only(left: 15,),
+              Padding(padding: EdgeInsets.only(left: 15),
               child: Text(
                 "Best Hospitals in Pune",
                 style: TextStyle(
@@ -190,7 +236,7 @@ class HomeScreen extends StatelessWidget {
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemCount: imgs.length,
-                  itemBuilder: (context,index){
+                  itemBuilder: (context, index) {
                     return Column(
                       children: [
                         Container(
@@ -214,7 +260,7 @@ class HomeScreen extends StatelessWidget {
                               Stack(
                                 children: [
                                   InkWell(
-                                    onTap: (){
+                                    onTap: () {
                                       Navigator.push(
                                         context, MaterialPageRoute(
                                           builder: (context) => HospitalScreen()));
@@ -245,7 +291,6 @@ class HomeScreen extends StatelessWidget {
                                       fontSize: 20,
                                       fontWeight: FontWeight.w400,
                                       color: Colors.black.withOpacity(0.6),
-
                                     ),
                                   ),
                                   Text(
@@ -253,25 +298,24 @@ class HomeScreen extends StatelessWidget {
                                     style: TextStyle(
                                       fontSize: 16,
                                       color: Colors.black.withOpacity(0.6),
-
                                     ),
-                                    ),
-                                    SizedBox(height: 8,),
-                                    Row(
-                                      children: [
-                                        Icon(
-                                          Icons.star,
-                                          color: Colors.amber,
-                                        ),
-                                        SizedBox(width: 5,),
-                                        Text("4.8",
+                                  ),
+                                  SizedBox(height: 8,),
+                                  Row(
+                                    children: [
+                                      Icon(
+                                        Icons.star,
+                                        color: Colors.amber,
+                                      ),
+                                      SizedBox(width: 5,),
+                                      Text("4.8",
                                         style: TextStyle(
                                           fontSize: 16,
                                           color: Colors.black.withOpacity(0.6),
                                         ),
-                                        )
-                                      ],
-                                    ),
+                                      )
+                                    ],
+                                  ),
                                 ],
                               ),
                               ),

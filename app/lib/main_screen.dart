@@ -1,4 +1,5 @@
 import 'package:app/schedule_screen.dart';
+import 'package:app/widget/location_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:app/home_screen.dart';
@@ -15,7 +16,7 @@ class _MainScreenState extends State<MainScreen> {
 
   final _screens = [
     HomeScreen(),
-    Container(),
+    LocationScreen(),
     ScheduleScreen(),
     Container(),
   ];

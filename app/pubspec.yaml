@@ -21,9 +21,12 @@ dependencies:
   material_design_icons_flutter: ^7.0.7296
   webview_flutter: ^4.0.0
   kommunicate_flutter: ^1.9.5
+  location: ^6.0.2
 flutter_html: ^2.2.1
 kommunicate_flutter: ^2.0.0
 preview: ^0.0.8
+google_maps_flutter: ^2.2.5
+location: ^4.4.0
 
 dev_dependencies:
   flutter_test:
